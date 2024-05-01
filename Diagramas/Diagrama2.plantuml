@@ -1,0 +1,54 @@
+@startuml Diagrama2
+skinparam sequenceMessageAlign right
+actor Usuario as user
+user-> Main: Presiona la flecha arriba
+activate Main
+Main -> Loza : update()
+activate Loza
+Loza -> Loza: check_up()
+Loza --> Mesa: set_lozas()
+destroy Loza
+activate Mesa
+Mesa --> user: No se ejecuta el movimiento 
+deactivate Mesa
+deactivate Main
+
+user-> Main: Presiona la flecha abajo
+activate Main
+Main -> Loza : update()
+activate Loza
+Loza -> Loza: check_down()
+Loza --> Mesa: set_lozas()
+destroy Loza
+activate Mesa
+Mesa --> user: No se ejecuta el movimiento 
+deactivate Mesa
+deactivate Main
+
+user-> Main: Presiona la flecha izquierda
+activate Main
+Main -> Loza : update()
+activate Loza
+Loza -> Loza: check_left()
+Loza --> Mesa: set_lozas()
+destroy Loza
+activate Mesa
+Mesa --> user: No se ejecuta el movimiento 
+deactivate Mesa
+deactivate Main
+
+user-> Main: Presiona la flecha derecha
+activate Main
+Main -> Loza : update()
+activate Loza
+Loza -> Loza: check_right()
+Loza --> Mesa: set_lozas()
+destroy Loza
+activate Mesa
+Mesa --> user: No se ejecuta el movimiento 
+deactivate Mesa
+deactivate Main
+
+mainframe **Secuencia cuando los metodos check retornan False**
+
+@enduml
