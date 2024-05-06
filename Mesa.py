@@ -8,13 +8,13 @@ class Mesa:
         self.lozas_num = []        
         self.num = [1,2,3,4,5,6,7,8]
         self.index = 0
-        random.shuffle(self.num)
+        #random.shuffle(self.num)
         self.font = pygame.font.Font(None, 36)
 
      def set_lozas(self):
         for j in range(0,3):
             for i in range(0,3):
-                i = Loza.Loza(self.screen,  50+(j*15)+(100*j), 50+(i*15)+(100*i), ' white')
+                i = Loza.Loza(self.screen,  50+(i*15)+(100*i), 50+(j*15)+(100*j), ' white')
                 self.lozas_num.append(i)
         del self.lozas_num[-1] 
 
@@ -22,3 +22,11 @@ class Mesa:
             i.text = self.font.render(str(self.num[self.index]), 1, 'Black')
             self.index +=1
             i.set_loza()
+     
+     def check_order(self):
+         if self.num == [1, 2, 3, 4, 5, 6, 7, 8]:
+             self.screen.fill('Black')
+             win = self.font.render('Ganaste :D', 1, 'Red')
+             self.screen.blit(win, (215, 215))
+             
+           

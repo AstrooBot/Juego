@@ -1,0 +1,26 @@
+@startuml Diagrama3
+
+Loza : screen
+Loza : x
+Loza : y 
+Loza : color 
+Loza : shape 
+Loza : text 
+Loza : set_loza()
+Loza : text 
+Loza : update(object_list [] lozas)
+Loza : check_up(object_list [] lozas)
+Loza : check_down(object_list [] lozas)
+Loza : check_left(object_list [] lozas)
+Loza : check_right(object_list [] lozas)
+
+Mesa : screen 
+Mesa : num
+Mesa : index
+Mesa : font 
+Mesa : set_lozas() 
+
+Main *-- Mesa
+Main : main()
+
+Mesa *-- Loza 

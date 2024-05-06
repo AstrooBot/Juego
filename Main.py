@@ -11,7 +11,6 @@ def main():
     mesa = Mesa.Mesa(screen)
     mesa.set_lozas()
 
-
     while 1 :
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -20,7 +19,8 @@ def main():
                 screen.fill('black')
                 
                 for lozas in mesa.lozas_num:
-                    lozas.update(mesa.lozas_num)         
+                    lozas.update(mesa.lozas_num)
+            mesa.check_order()         
         pygame.display.update()
 
 if __name__ == "__main__":

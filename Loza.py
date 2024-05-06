@@ -80,3 +80,4 @@ class Loza:
                     check = False
                 
             return check  
+    
